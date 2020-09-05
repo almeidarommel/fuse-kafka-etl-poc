@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: Template
+labels:
+  template: openJdk-springboot-example
+metadata:
+  annotations:
+    description: Pipeline Dev SpringBoot S2I
+    iconClass: icon-jenkins
+    tags: java,springboot,jenkins,dev
+  creationTimestamp: null
+  name: ${PIPELINE_NAME}
+objects:
+  - apiVersion: v1
+    kind: BuildConfig
+    metadata:
+      name: ${APP_NAME}-gitops
+    spec:
+      strategy:
+        jenkinsPipelineStrategy: 
+          jenkinsfile: |-
+            pipeline {
+            }
+          env:
+          - name: PROJECT_NAME
+            value: ${BASE_PROJECT_NAME}
+          - name: APP_NAME
+            value: ${APP_NAME}
+
+parameters:
+- description: The base project name
+  displayName: Base project name
+  name: BASE_PROJECT_NAME
+  required: true
+- description: The name assigned to the application.
+  displayName: Application Name
+  name: APP_NAME
+  required: true
+- description: Pipeline name
+  displayName: Application Name
+  name: PIPELINE_NAME
+  required: true
