@@ -51,6 +51,8 @@ Access database on OCP locally.
 
     oc port-forward <POD> <PORT>:<PORT>
     
+    EX: 	oc port-forward postgresql-1-wdvnn 5432:5432
+    
 Create jenkins pipeline 
 
 	oc process --filename='fuse-kafka-etl-poc/pipeline.yaml' -p BASE_PROJECT_NAME=fuse-etl-project -p APP_NAME=postgres-extractor -p PIPELINE_NAME=fuse-person-transformer-pipeline| oc create -f -

@@ -26,7 +26,7 @@ pipeline {
             
             steps {
                 script {
-                    git branch: "master", credentialsId: "githubid", url: "https://github.com/iam-roger-io/fuse-etl.git" 
+                    git branch: "master", url: "https://github.com/iam-roger-io/fuse-kafka-etl-poc.git"
                     pom = readMavenPom(file: './postgres-extractor/pom.xml')
                     version = pom.getVersion();
                     artifactId = pom.getArtifactId()                    
