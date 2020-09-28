@@ -71,10 +71,13 @@ objects:
     kind: ConfigMap
     metadata:
       name:  '${NAME}'
-      namespace: fuse-etl    
+      namespace: '${NAMESPACE}'   
     data:
-      application.properties: |-
-        kafka.bootstrap.server=my-cluster-kafka-bootstrap.cicd-tools.svc:9092
+      application.properties: |-        
+        database.mysql.url=jdbc:mysql://mysql:3306/sampledb
+        database.mysql.username=userR1K
+        database.mysql.password=NOIaAe7yFvGiJs8v
+        kafka.bootstrap.server=my-cluster-kafka-bootstrap.redhat-sample-amqstreams.svc:9092        
   - apiVersion: v1
     kind: Service
     metadata:

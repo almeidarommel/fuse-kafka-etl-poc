@@ -11,10 +11,10 @@
 
 ## Criar Template
 	
-	oc create -f ./mysql-extractor-template.yaml
+	oc create -f ./openshift/mysql-extractor-template.yaml
 
 ## Criar pipeline
 	
 	oc project cicd-tools
-	oc process --filename=./pipeline.yaml -p BASE_PROJECT_NAME=fuse-etl-p APP_NAME=mysql-extractor -p PIPELINE_NAME=cicd-tools | oc create -f -
+	oc process --filename=./openshift/pipeline.yaml -p BASE_PROJECT_NAME=fuse-etl-p APP_NAME=mysql-extractor -p PIPELINE_NAME=cicd-tools | oc create -f -
 	

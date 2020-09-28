@@ -10,12 +10,12 @@
 
 ## Criar Template
 	
-	oc create -f ./person-transformer-template.yaml
+	oc create -f ./openshift/person-transformer-template.yaml
 
 ## Criar pipeline
 	
 	oc project cicd-tools
-	oc process --filename=./pipeline.yaml -p BASE_PROJECT_NAME=fuse-etl -p APP_NAME=person-transformer -p PIPELINE_NAME=cicd-tools | oc create -f -
+	oc process --filename=./openshift/pipeline.yaml -p BASE_PROJECT_NAME=fuse-etl -p APP_NAME=person-transformer -p PIPELINE_NAME=cicd-tools | oc create -f -
 	
 
 

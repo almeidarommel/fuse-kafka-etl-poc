@@ -71,7 +71,7 @@ objects:
     kind: ConfigMap
     metadata:
       name:  '${NAME}'
-      namespace: fuse-etl    
+      namespace: '${NAMESPACE}'    
     data:
       application.properties: |-
         database.inst1.url=jdbc:postgresql://postgresql:5432/sampledb
