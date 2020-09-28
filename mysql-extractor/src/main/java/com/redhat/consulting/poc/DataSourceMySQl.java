@@ -32,11 +32,15 @@ public class DataSourceMySQl {
 
 	@Bean
 	public DataSource getDataSource() {
-		 		 
-			DriverManagerDataSource dataSource = new DriverManagerDataSource();
-			dataSource.setUrl(this.dataBaseUrl);
-			dataSource.setUsername(this.dataBaseUsername);
-			dataSource.setPassword(this.dataBasePassword);
-			return dataSource;
-		}
+		
+		LOGGER.info("#### this.dataBaseUrl " +  this.dataBaseUrl);		
+		LOGGER.info("#### this.dataBaseUsername " +  this.dataBaseUsername);
+		LOGGER.info("#### this.dataBasePassword " +  this.dataBasePassword);
+		
+		DriverManagerDataSource dataSource = new DriverManagerDataSource();
+		dataSource.setUrl("jdbc:mysql://mysql:3306/sampledb");
+		dataSource.setUsername(this.dataBaseUsername);
+		dataSource.setPassword(this.dataBasePassword);
+		return dataSource;
+	}
 }
