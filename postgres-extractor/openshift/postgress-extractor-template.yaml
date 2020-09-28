@@ -74,10 +74,11 @@ objects:
       namespace: '${NAMESPACE}'    
     data:
       application.properties: |-
+        kafka.bootstrap.server=my-cluster-kafka-bootstrap.redhat-sample-amqstreams.svc:9092
         database.inst1.url=jdbc:postgresql://postgresql:5432/sampledb
-        database.inst1.username=postgres
-        database.inst1.paswword=postgress
-        kafka.bootstrap.server=my-cluster-kafka-bootstrap.cicd-tools.svc:9092
+        database.inst1.username=userHNE
+        database.inst1.password=bjBeiHeCj3vL5wTp               
+        
   - apiVersion: v1
     kind: Service
     metadata:
