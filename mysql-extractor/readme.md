@@ -22,3 +22,19 @@
 
 	oc project
 	mvn  fabric8:deploy -Popenshift	
+	
+	
+	
+#MYSQL TIP	
+
+In case of error:  Access denied for user 'root'@'localhost' (using password: YES).
+Considering username = mysql
+
+	mysql> ALTER USER 'mysql'@'%' IDENTIFIED BY 'mysql';
+	Query OK, 0 rows affected (0.00 sec)
+	
+	mysql> GRANT ALL PRIVILEGES ON *.* to 'mysql'@'%' WITH GRANT OPTION;
+	Query OK, 0 rows affected (0.01 sec)
+	
+	mysql> FLUSH PRIVILEGES;
+	Query OK, 0 rows affected (0.01 sec)

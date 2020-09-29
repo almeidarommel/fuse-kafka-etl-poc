@@ -9,6 +9,17 @@
 	</parent>
 	<artifactId>mysql-extractor</artifactId>
 
+	<dependencies>
+	
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>8.0.19.redhat-00004</version>
+</dependency>
+	
+	</dependencies>
+
+
 	<build>
 		<defaultGoal>spring-boot:run</defaultGoal>
 
@@ -47,7 +58,7 @@
 						<config>
 							<spring-boot>
 								<fromMode>docker</fromMode>
-								<from>registry.redhat.io/openjdk/openjdk-8-rhel8:1.1</from>
+								<from>registry.redhat.io/openjdk/openjdk-8-rhel8:latest</from>
 							</spring-boot>
 						</config>
 					</generator>
