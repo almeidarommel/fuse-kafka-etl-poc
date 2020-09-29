@@ -67,6 +67,12 @@ To configMaps:
 
  
 Optionnaly, is possible uses fabric8 plugin insted of Jenkins to deploy on Openshift.
+
+	oc project
+
+	cd <MODULE FOLDER>
+	
+	mvn  fabric8:deploy -Popenshift
  
 This project was tested on Openshift and outside (RHEL 7/Fedora 30)
  

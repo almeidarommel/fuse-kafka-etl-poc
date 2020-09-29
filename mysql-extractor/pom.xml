@@ -5,8 +5,9 @@
 	<parent>
 		<groupId>com.redhat.consulting.poc</groupId>
 		<artifactId>fuse-kafka-etl-poc</artifactId>
-		<version>1.0</version>
+		<version>1.0</version>		
 	</parent>
+	<version>1.4</version>
 	<artifactId>mysql-extractor</artifactId>
 
 	<build>

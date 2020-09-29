@@ -12,10 +12,14 @@
 	
 	oc create -f ./openshift/postgress-extractor-template.yaml
 
-## Criar pipeline
+## Create pipeline. (Jenkins) 
 	
 	oc project cicd-tools
 	oc process --filename=./openshift/pipeline.yaml -p BASE_PROJECT_NAME=fuse-etl -p APP_NAME=postgres-extractor -p PIPELINE_NAME=cicd-tools | oc create -f -
 	
+## Deploy Without jenkins
+
+	oc project
+	mvn  fabric8:deploy -Popenshift
 
 

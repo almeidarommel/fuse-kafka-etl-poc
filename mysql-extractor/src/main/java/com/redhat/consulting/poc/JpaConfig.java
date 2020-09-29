@@ -34,7 +34,9 @@ public class JpaConfig {
 	@Bean
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
 		
+			
 		LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
+		
 		em.setDataSource(dataSource);
 		em.setPersistenceUnitName("mysql-inst1-pu");
 		em.setPackagesToScan(new String[] { "com.redhat.consulting.poc.entity" });

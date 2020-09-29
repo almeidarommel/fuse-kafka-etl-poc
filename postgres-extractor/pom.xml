@@ -28,28 +28,42 @@
 			</plugin>
 		</plugins>
 	</build>
-	
-	 <profiles>
-        <profile>
-            <id>openshift</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.jboss.redhat-fuse</groupId>
-                        <artifactId>fabric8-maven-plugin</artifactId>
-                        <version>${fuse.bom.version}</version>
-                        <executions>
-                            <execution>
-                                <goals>
-                                    <goal>resource</goal>
-                                    <goal>build</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
 
+	<profiles>
+		<profile>
+			<id>openshift</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.jboss.redhat-fuse</groupId>
+						<artifactId>fabric8-maven-plugin</artifactId>
+						<version>${fuse.version}</version>
+						<configuration>
+							<enricher>
+								<excludes>
+									<exclude>fmp-openshift-route</exclude>
+								</excludes>
+							</enricher>
+							<generator>
+								<config>
+									<spring-boot>
+										<fromMode>docker</fromMode>
+										<from>registry.redhat.io/openjdk/openjdk-8-rhel8:1.1</from>
+									</spring-boot>
+								</config>
+							</generator>
+						</configuration>
+						<executions>
+							<execution>
+								<goals>
+									<goal>resource</goal>
+									<goal>build</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>

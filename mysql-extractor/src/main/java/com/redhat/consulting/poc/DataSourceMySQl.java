@@ -4,7 +4,6 @@ import javax.sql.DataSource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -38,7 +37,7 @@ public class DataSourceMySQl {
 		LOGGER.info("#### this.dataBasePassword " +  this.dataBasePassword);
 		
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setUrl("jdbc:mysql://mysql:3306/sampledb");
+		dataSource.setUrl(this.dataBaseUrl);
 		dataSource.setUsername(this.dataBaseUsername);
 		dataSource.setPassword(this.dataBasePassword);
 		return dataSource;
