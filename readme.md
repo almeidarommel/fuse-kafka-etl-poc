@@ -17,6 +17,8 @@
     	data_criacao timestamp NULL,
     	ultimo_update timestamp NULL
     );
+    
+    insert into pessoa (id_pessoa,nome, cpf, data_criacao, ultimo_update) values (1, 'pessoa1', '11111111111', NOW(), NOW());
 
 ### MYSQL
 
@@ -29,6 +31,9 @@
       `ultimo_update` datetime DEFAULT NULL,
       `data_nascimento` date DEFAULT NULL  
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+    
+    insert into pessoa  (id_pessoa, nome, cpf, telefone, data_criacao, ultimo_update, data_nascimento) values (1,'pessoa1','11111111111','11988888888', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_DATE);
+    
 
 ###  Unified table (MYSQL) 
     CREATE TABLE `person_processed` (
