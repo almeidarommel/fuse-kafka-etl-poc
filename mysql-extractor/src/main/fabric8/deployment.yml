@@ -1,6 +1,7 @@
 spec:
   template:
     spec:
+      serviceAccountName: "mysql-extractor"
       containers:
         - 
           resources:
