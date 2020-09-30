@@ -1,5 +1,6 @@
 package com.redhat.consulting.poc.processor;
 
+import java.util.Date;
 import java.util.List;
 
 import org.apache.camel.Exchange;
@@ -20,6 +21,7 @@ public class MySqlRegisterProcessor implements Processor {
 		if (null == list || list.isEmpty()) {
 			
 			entity = new UniquePersonEntity();
+			entity.setCreated_on(new Date());
 			
 		} else {
 			
@@ -39,8 +41,10 @@ public class MySqlRegisterProcessor implements Processor {
 		if (null != model.getPostgresId()) {
 
 			entity.setIdPostgres(model.getPostgresId());
+			
 		}
 
+		entity.setLast_update(new Date());
 		exchange.getIn().setBody(entity);
 	}
 

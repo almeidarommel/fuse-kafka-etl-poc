@@ -17,6 +17,7 @@ public class RouteDefinitions extends RouteBuilder {
 		  .split().body().streaming()
 		  .process(new ExtractorProcessor())
 		  .marshal().json(JsonLibrary.Jackson)
+		  .log("${body}")
 		  .to("kafka:person_topic?brokers={{kafka.bootstrap.server}}");
 		
 	}

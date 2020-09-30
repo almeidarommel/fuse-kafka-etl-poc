@@ -14,9 +14,13 @@ public class ExtractorProcessor implements Processor {
 		//GEt Entity
 		PessoaEntity entity = exchange.getIn().getBody(PessoaEntity.class);			
 		
-		//TODO Cast to Model Objecta, maybe can used a Dozer
-		PessoaModel model = new PessoaModel(entity.getId(), null, entity.getNome(), entity.getCpf());
-			
+		//TODO Cast to Model Objecta, maybe can used a Dozer		
+		PessoaModel model = new PessoaModel();
+		model.setPostgresId(entity.getId());
+		model.setNome(entity.getNome());		
+		model.setCpf(entity.getCpf());
+		
+		
 		exchange.getIn().setBody(model);
 		
 		

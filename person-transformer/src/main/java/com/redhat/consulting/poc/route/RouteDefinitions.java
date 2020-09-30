@@ -20,6 +20,7 @@ public class RouteDefinitions extends RouteBuilder {
 	public void configure() throws Exception {		
 		
 		from("kafka:person_topic?brokers={{kafka.bootstrap.server}}&groupId=groupOne")
+			.log("### Receiving from KAFKA ${body}")
 			.unmarshal().json(JsonLibrary.Jackson, PessoaModel.class)
 			.process(new Processor() {
 				

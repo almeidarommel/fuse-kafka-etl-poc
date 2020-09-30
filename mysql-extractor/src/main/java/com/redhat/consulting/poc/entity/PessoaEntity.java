@@ -26,6 +26,12 @@ public class PessoaEntity {
 	@Column(name="cpf")
 	private String cpf;
 	
+	@Column(name="telefone")
+	private String telefone;	
+	
+	@Column(name="data_nascimento")
+	private Date dataNascimento;
+	
 	@Column(name="data_criacao")
 	private Date criacao;
 	
@@ -60,8 +66,17 @@ public class PessoaEntity {
 	}
 	public void setUpdate(Date update) {
 		this.update = update;
-	} 
-	
-	
-
+	}
+	public Date getDataNascimento() {
+		return dataNascimento;
+	}
+	public void setDataNascimento(Date dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
+	public String getTelefone() {
+		return telefone;
+	}
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	} 	
 }
