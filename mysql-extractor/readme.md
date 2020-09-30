@@ -30,6 +30,8 @@
 In case of error:  Access denied for user 'root'@'localhost' (using password: YES).
 Considering username = mysql
 
+	$ mysql -u root 
+
 	mysql> ALTER USER 'mysql'@'%' IDENTIFIED BY 'mysql';
 	Query OK, 0 rows affected (0.00 sec)
 	
