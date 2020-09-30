@@ -30,6 +30,9 @@
       `data_nascimento` date DEFAULT NULL  
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+    insert into pessoa  (id_pessoa, nome, cpf, telefone, data_criacao, ultimo_update, data_nascimento) values (2,'b','c','4', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, CURRENT_DATE);
+    
+
 ###  Unified table (MYSQL) 
     CREATE TABLE `person_processed` (
       `id` int NOT NULL AUTO_INCREMENT,

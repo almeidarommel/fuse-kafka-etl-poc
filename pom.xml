@@ -90,7 +90,7 @@
 
 
 		<!-- database -->
-<!-- 
+
 		<dependency>
 			<groupId>org.apache.camel</groupId>
 			<artifactId>camel-jpa</artifactId>
@@ -110,7 +110,7 @@
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
-		</dependency> -->
+		</dependency> 
 		
         <!-- Spring-Cloud-Kubernetes -->
          <dependency>
@@ -118,10 +118,10 @@
             <artifactId>spring-cloud-kubernetes-core</artifactId>
         </dependency> 
 		
-<!-- 		<dependency>
+		<dependency>
 		    <groupId>mysql</groupId>
 		    <artifactId>mysql-connector-java</artifactId>
-		</dependency> -->
+		</dependency> 
 
 	</dependencies>
 	
