@@ -17,7 +17,8 @@ public class RouteDefinitions extends RouteBuilder {
 		  .split().body().streaming()
 		  .process(new ExtractorProcessor())
 		  .marshal().json(JsonLibrary.Jackson)
-		  .to("kafka:person_topic?brokers=my-cluster-kafka-bootstrap.cicd-tools.svc:9092");
+	          .log("${body}")  		
+		  .to("kafka:person_topic?brokers={{kafka.bootstrap.server}}");		  
 		
 	}
 	
