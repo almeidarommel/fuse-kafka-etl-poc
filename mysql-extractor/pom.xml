@@ -39,12 +39,17 @@
                         <groupId>org.jboss.redhat-fuse</groupId>
                         <artifactId>fabric8-maven-plugin</artifactId>
                         <version>${fuse.version}</version>
-                        <configuration>
+                        <configuration>                        
                             <enricher>
                                 <excludes>
                                     <exclude>fmp-openshift-route</exclude>
                                 </excludes>
                             </enricher>
+                             <config>
+        <f8-healthcheck-vertx>
+            <path>/</path>
+        </f8-healthcheck-vertx>
+      </config>
                             <generator>
 						<config>
 							<spring-boot>
